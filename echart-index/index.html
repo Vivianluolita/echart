@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp">
+    <link rel="stylesheet" href="echarts-2.2.7/src/index/index.css">
+</head>
+<body data-type="index">
+    <div class="Content clearfix">
+        <div class="Content-left">
+            <div class="left-count">
+                <div class="title">实时统计</div>
+                <div class="count-info">
+                    <div class="unit-number">
+                        <span class="">单位用户数:</span>
+                        <span class="">765</span>
+                        <span class="">今日登陆数:</span>
+                        <span class="">25</span>
+                    </div>
+                    <div class="person-number">
+                        <span class="">个人用户数</span>
+                        <span class="">7345</span>
+                        <span class="">今日登陆数:</span>
+                        <span class="">454</span>
+                    </div>
+                </div>
+            </div>
+            <!-- end of left-count -->
+            <div class="hot-world">
+                <div class="title">实时统计</div>
+                <div id="word-echart" style="width: 315px;height:200px;"></div>
+            </div>
+            <!-- end of hot-world -->
+            <div class="bussiness-proportion">
+                <div class="title">终端业务量占比</div>
+                <div id="bussiness-echart" style="width: 315px;height:200px;"></div>
+            </div>
+        </div>
+        <div class="Content-middle">
+            <div>
+                <h2>鄂州市人社公共服务监控平台</h2>
+            </div>
+            <div class="map">
+                <div id="map-echart" style="width: 315px;height:200px;"></div>
+            </div>
+        </div>
+        <div class="Content-right"></div>
+        <div class="clear"></div>
+    </div>
+
+  
+    <script src="echarts-2.2.7/src/index/index.js"></script>
+    <script src="echarts-2.2.7/src/echarts.min.js"></script>
+    <script src="echarts-2.2.7/src/echarts.js"></script>
+    <script type="text/javascript">
+    /***********************************/
+   
+
+    /************************************/
+         var myChart2 = echarts.init(document.getElementById('bussiness-echart'));
+            option2 = {
+        title : {
+            
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            x : 'center',
+            y : 'bottom',
+            data:['APP服务','自助一体机','微信服务','网厅服务','单位网上经办']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {
+                    show: true,
+                    type: ['pie', 'funnel']
+                },
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        series : [
+            {
+                name:'半径模式',
+                type:'pie',
+                radius : [20, 110],
+                center : ['25%', '50%'],
+                roseType : 'radius',
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                lableLine: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data:[
+                    {value:25, name:'APP服务'},
+                    {value:15, name:'自助一体机'},
+                    {value:10, name:'微信服务'},
+                    {value:30, name:'网厅服务'},
+                    {value:20, name:'单位网上经办'}
+                ]
+            },
+            {
+                name:'面积模式',
+                type:'pie',
+                radius : [30, 110],
+                center : ['75%', '50%'],
+                roseType : 'area',
+                data:[
+                    {value:25, name:'APP服务'},
+                    {value:15, name:'自助一体机'},
+                    {value:10, name:'微信服务'},
+                    {value:30, name:'网厅服务'},
+                    {value:20, name:'单位网上经办'}
+                ]
+            }
+        ]
+    };
+
+// 使用刚指定的配置项和数据显示图表。
+        myChart2.setOption(option2);
+
+        /*****************************/
+        /******************************/
+        (function (root, factory) {if (typeof define === 'function' && define.amd) {define(['exports', 'echarts'], factory);} else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {factory(exports, require('echarts'));} else {factory({}, root.echarts);}}(this, function (exports, echarts) {var log = function (msg) {if (typeof console !== 'undefined') {console && console.error && console.error(msg);}};if (!echarts) {log('ECharts is not Loaded');return;}if (!echarts.registerMap) {log('ECharts Map is not loaded');return;}echarts.registerMap('beijing', {"type":"FeatureCollection","features":[{"type":"Feature","id":"420700","properties":{"name":"鄂州市","cp":[114.890593,30.396536],"childNum":1},"geometry":{"type":"Polygon","coordinates":["@@IBA@KBK@A@CCAE@C@@AAC@C@GDIDA@A@@ABC@AA@C@C@IBI@A@AAAAAEACEEAEAGIAA@@@AA@A@@AAA@@AAAA@@@@AC@A@@@@A@@@@DAB@BAB@@@@A@CBC@@@AA@C@A@AAEAAAA@A@@@@CA@@C@AA@AA@AA@@@@@CDEDCDA@G@C@ECAAC@C@@@A@A@@@ACAAC@A@AAAA@EAA@ACA@@CAC@E@@@C@CBABCHABABA@ABA@E@A@A@CDADABABCBEBMBEBGBGDSFGBGBCBCDEBGBQBGDEDADABAF@F@D@BEHCF@BBDBBDBDDHD@BBD@DABCBADADCDCBCBEAE@E@EBEBEDGDCFAD@F@DBL@DABCDIJC@I@E@@@W@MCK@MAA@GI@C@CBGDGECG@K@GBIBKDEDE@A@@@EFABA@E@E@C@CBC@CDABABBF@D@BCBA@ABCF@BAF@L@@A@GBAAC@CAQKIKGGCGCCCEAE@EACCE@ABABABCBAFEAECCIEKCGCGCACCC@E@EECE@EACIBGDGBGBEAG@E@MBELEFCDCDC@EDEHCDEFCNEFEDCDEDAN@D@FADALGAEAAQGAC@CBCDCBA@AC@C@C@EAECCCEK@E@CDCDCDAJEJCBC@ABG@EFAD@DAFCDEDMBMACFEDGDCDEDCBC@CC@CDCBCBE@ECECCCCCEE@EBCDCBG@EDCDCFADCACACAEEAECECCA@CCEEAEAG@GBADADAFCFEAEAEAEEACBCJG@CCKAEAGC@E@EBI@GCCCEECBCDEBGA@@AAEAE@ECA@ABAB@@@HCFAD@@@BB@BB@@@BAD@BBD@@@F@B@@EA@@A@@B@B@@B@@B@@@@ABA@@@B@@BDA@B@@A@A@@BA@BBA@EBA@ABABABADADCBABC@C@GCIAIAEAAAA@C@AAABCBA@CBAAA@AA@@@C@AAAAACAA@AA@E@AA@C@ABA@C@AAECE@CDCD@DBDDBDBDBADEBCDEBCFGHKBABCBEDCDAB@@A@@BABB@@DBBBB@B@B@@@BABADA@CDCBCBAFAD@B@B@@@B@B@BAD@B@@ABGDCBABA@A@@@C@CDABABB@@D@BBB@@AD@@A@@@@BADCDCDABEHGF@F@@@B@BAD@DABBB@BBBBBBBB@@B@@@B@B@@@@@B@@@@@@@B@D@B@@CD@B@BBBDDBDFDDHBDAH@@CD@D@DDBFBDD@FAH@D@D@DBDBB@BD@B@HAF@HFHHDHBHBHBHBHAJ@H@HBHFFJFHFFDHFFDDH@H@H@FBF@FBDHFH@FFFDHDFDFHBFBJAH@HAH@F@F@FBFBFBJBHBHBHAHAHGFGJEP@LFLBR@NBRBDBTEDBJ@HAHAFCDCFCD@D@@@B@BBBBBBBBBB@@@@B@@D@@BB@@B@B@B@BAB@@A@@BA@@D@DBDBBB@DBBAB@B@@@@A@@D@B@@@B@B@FBB@B@B@BAB@@@B@@@B@@@BA@@B@@@B@@@@@@A@AB@@@FA@@DAF@D@BB@@ABADAH@D@BBHBBBDB@@BB@F@F@D@BBBBBBBBBBBD@BAB@BADCD@@AB@DB@@D@B@B@DAFCDAD@FDDB@BD@BAHAFALAJ@DABADABC@@AA@AAA@AB@B@BBFB@F@BBBB@B@BEBEDAF@HAHCJRARHZNPFNDvJ\\HZHVJRHXTDBPJrPN@P@TALI\\]P_DW@@BOAGBABI@G@K@O@MAK@ICM@KAIAI@I@G@K@IBIBIDINYJOBALKLINENGLERGVCRELANAR@PAPANALALALAL@LBL@LBJDB@^@B@hGB@FCHCNKHCHIHIHMFKDIDIDIBEDIBKBGBIDSBMDMBK@G@G@@@ACUIQCY"],"encodeOffsets":[[117842,30986]]}}],"UTF8Encoding":true});}));
+    </script>
+</body>
+</html>
