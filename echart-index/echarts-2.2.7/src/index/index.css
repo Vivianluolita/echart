@@ -109,11 +109,19 @@ body{
     position: relative;
 }
 .word-echart{
+    height: 200px;
     border:1px solid #02458b;
     position: relative;
 }
+.word-echart a{
+    text-decoration: none;
+    line-height: 48px;
+    margin: 5px 8px;
+
+}
 .word-wrap{
     position: relative;
+
 }
 .map-wrap{
     position: relative;
@@ -212,12 +220,15 @@ body{
     transform: scaleY(0.5);
     z-index: 5;
 }
-.color1{
-    color: blue;
+.color0{
+    color: white;
 }
 .color2{
     color: yellow;
 }
 .color1{
     color: red;
+}
+.color1{
+    color: blue;
 }
