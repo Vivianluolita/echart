@@ -2,7 +2,7 @@ body{
     background-color: #032376;
     margin:0px;
     padding:0px;
-    background: url("../images/starsky.png") repeat no-repeat;
+    background: url("../images/starsky.png") repeat-y;
     background-size: 100% 100%;
     color: white;
 }
@@ -50,6 +50,10 @@ body{
     background-color: #02458b;
     padding: 5px auto 5px 15px;
     padding-left: 15px;
+    filter:alpha(opacity=0);
+    -moz-opacity:0.9;
+    -webkit-opacity:0.9;
+    opacity:0.9;
     
 }
 /*.title:before{
@@ -94,27 +98,28 @@ body{
     bottom: 0px;
 }
 .left-count{
-    padding: 15px 15px 0 0;
+    padding: 5px 15px 0 0;
 }
 .hot-world{
-    padding: 15px 15px 0 0;
+    padding: 5px 15px 0 0;
 }
 .bussiness-proportion{
-    padding: 15px 15px 0 0;
+    padding: 5px 15px 0 0;
 }
 .count-info{
     border:1px solid #02458b;
     position: relative;
+    height: 130px;
 }
 .word-echart{
-    height: 200px;
+    height: 150px;
     border:1px solid #02458b;
     position: relative;
 }
 .word-echart a{
     text-decoration: none;
-    line-height: 48px;
-    margin: 5px 8px;
+    line-height: 32px;
+    margin: 5px 5px;
 
 }
 .word-wrap{
@@ -130,7 +135,7 @@ body{
     right: 5%;
 }
 .map-title{
-    color:#02458b;
+    color:#1bcee7;
     font-size: 16px; 
 }
 .number{
@@ -171,10 +176,10 @@ body{
     border-bottom: 1px solid #1bcee7;
 }
 .map{
-    padding: 15px 15px 0 0;
+    padding: 5px 15px 0 0;
 }
 .month-bussiness{
-    padding: 15px 15px 0 0;
+    padding: 5px 15px 0 0;
 }
 .month-sum{
     border:1px solid #02458b;
@@ -189,7 +194,7 @@ body{
 
 .mon-tb td{
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
     padding: 5px 5px;
     border-bottom: 1px solid #17e5f4;
 }
@@ -202,12 +207,12 @@ body{
 .count-tb{
     width: 95%;
     margin: 0 auto;
-    padding: 40px 0 20px 0;
+    padding: 50px 0 20px 0;
     text-align: center;
 }
 .count-tb td{
     color: #1bcee7;
-    font-size: 16px;
+    font-size: 14px;
     padding: 5px 5px;
     border-bottom: 1px solid #17e5f4;
 }
@@ -225,9 +230,10 @@ body{
 }
 .calendar{
     color: black;
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
     background-color: #bcf2fd;
     border-radius: 4px;
