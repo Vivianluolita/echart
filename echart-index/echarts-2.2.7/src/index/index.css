@@ -124,8 +124,22 @@ body{
 .map-wrap{
     position: relative;
 }
+.map-number{
+    position: absolute;
+    top: 0;
+    right: 5%;
+}
+.map-title{
+    color:#02458b;
+    font-size: 16px; 
+}
+.number{
+    color: #e0fb18;
+    font-size:24px;
+}
 .month-wrap{
     position: relative;
+    border:1px solid #02458b;
 }
 .bussiness-wrap{
     position: relative;
@@ -167,56 +181,58 @@ body{
     position: relative;
 }
 .mon-tb{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0 20px 0;
     text-align: center;
 }
+
 .mon-tb td{
-    color: #1bcee7;
+    color: #ffffff;
     font-size: 16px;
-    white-space: nowrap;
-    padding: 5px 8px;
-    width: 33.33%
+    padding: 5px 5px;
+    border-bottom: 1px solid #17e5f4;
+}
+.tb-th{
+    color: #1bcee7 !important;
 }
 .mon-tb tr{
     border-bottom: 1px solid #1bcee7;
 }
-.tb-tr:after{
-    content: " ";
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    border-bottom: 1px solid #1bcee7;
-    color: #d9d9d9;
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%;
-    -webkit-transform: scaleY(0.5);
-    transform: scaleY(0.5);
-    z-index: 5;
-}
 .count-tb{
+    width: 95%;
+    margin: 0 auto;
+    padding: 40px 0 20px 0;
     text-align: center;
 }
 .count-tb td{
     color: #1bcee7;
     font-size: 16px;
-    white-space: nowrap;
-    padding: 5px 8px;
-    width: 50%
+    padding: 5px 5px;
+    border-bottom: 1px solid #17e5f4;
 }
 .count-tb tr{
     border-bottom: 1px solid #1bcee7;
 }
-.count-tr:after{
-    content: " ";
+.Number{
+    color: #d2ae24;
+    /*margin-left: 8px;*/
+}
+.calendar-box{
     position: absolute;
-    left: 10px;
-    right: 10px;
-    border-bottom: 1px solid #1bcee7;
-    color: #d9d9d9;
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%;
-    -webkit-transform: scaleY(0.5);
-    transform: scaleY(0.5);
-    z-index: 5;
+    top: 0;
+    right: 5%;
+}
+.calendar{
+    color: black;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #bcf2fd;
+    border-radius: 4px;
+    display: inline-block;
+
 }
 .color0{
     color: white;
@@ -227,6 +243,6 @@ body{
 .color1{
     color: red;
 }
-.color1{
+.color3{
     color: blue;
 }
