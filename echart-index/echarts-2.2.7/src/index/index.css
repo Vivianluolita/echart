@@ -98,13 +98,13 @@ body{
     bottom: 0px;
 }
 .left-count{
-    padding: 5px 15px 0 0;
+    padding: 5px 15px 0 15px;
 }
 .hot-world{
-    padding: 5px 15px 0 0;
+    padding: 5px 15px 0 15px;
 }
 .bussiness-proportion{
-    padding: 5px 15px 0 0;
+    padding: 5px 15px 0 15px;
 }
 .count-info{
     border:1px solid #02458b;
