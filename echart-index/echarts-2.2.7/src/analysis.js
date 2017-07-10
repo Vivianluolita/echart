@@ -1,5 +1,8 @@
 var myChart = echarts.init(document.getElementById('analysis-echart'));
+var colors = ['#5793f3', '#d14a61'];
 option = {
+    //设置柱状图以及折线颜色
+    color:colors,
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -18,7 +21,26 @@ option = {
         data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月'],
         axisPointer: {
             type: 'shadow'
+        },
+        //设置x轴以及x轴颜色
+        nameLocation: 'start',
+        nameTextStyle: {
+            color: '#ffffff'
+        },
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: '#fff',
+                fontSize: '10'
+            },
+            rotate: 30
+        },
+        axisLine: {
+            lineStyle: {
+                color: "#fff"
+            }
         }
+
     }],
     yAxis: [{
             type: 'value',
@@ -26,8 +48,23 @@ option = {
             min: 0,
             max: 500,
             interval: 100,
+            //设置y轴颜色
             axisLabel: {
                 formatter: '{value}'
+            },
+            nameTextStyle: {
+                color: '#fff'
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            axisLine: {
+                lineStyle: {
+                    color: "#fff"
+                }
             }
         },
         {
@@ -36,8 +73,23 @@ option = {
             min: 0,
             max: 50,
             interval: 10,
+            //设置y轴颜色
             axisLabel: {
                 formatter: '{value}'
+            },
+            nameTextStyle: {
+                color: '#fff'
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            axisLine: {
+                lineStyle: {
+                    color: "#fff"
+                }
             }
         }
     ],

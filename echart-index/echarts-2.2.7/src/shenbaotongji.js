@@ -1,108 +1,154 @@
 /****************申报服务统计*********************/
 var myChart = echarts.init(document.getElementById('search-echart'));
+var colors = ['#5793f3', '#d14a61', '#675bba'];
 option = {
-    title: {
-        text: '',
-        subtext: '申报服务访问次数'
+    //设置柱状颜色以及折线颜色
+    color:colors,
+    title : {
+
     },
-    tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-            type: 'cross',
-            label: {
-                backgroundColor: '#283b56'
+    tooltip : {
+        trigger: 'axis'
+    },
+    //上方选项卡效果
+    legend: {
+        data:['线上业务办理量', '线下业务办理量', '环比分析'],
+        textStyle: {
+            color: '#ffffff'
+        }
+
+    },
+    calculable : true,
+    xAxis : [
+        {
+            name:'时间',
+            type : 'category',
+            data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+            nameTextStyle: {
+                color:'#ffffff'
+        },
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: '#fff',
+                fontSize: '10'
+            },
+            rotate: 30
+        },
+        axisLine: {
+            lineStyle: {
+                color: "#fff"
             }
         }
-    },
-    legend: {
-        data:['最新成交价', '预购队列']
-    },
-    toolbox: {
-        show: true,
-        feature: {
-            dataView: {readOnly: false},
-            restore: {},
-            saveAsImage: {}
-        }
-    },
-    dataZoom: {
-        show: false,
-        start: 0,
-        end: 100
-    },
-    xAxis: [
-        {
-            type: 'category',
-            boundaryGap: true,
-            data: (function (){
-                var now = new Date();
-                var res = [];
-                var len = 10;
-                while (len--) {
-                    res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
-                    now = new Date(now - 2000);
-                }
-                return res;
-            })()
-        },
-        {
-            type: 'category',
-            boundaryGap: true,
-            data: (function (){
-                var res = [];
-                var len = 10;
-                while (len--) {
-                    res.push(len + 1);
-                }
-                return res;
-            })()
         }
     ],
-    yAxis: [
+    yAxis : [
         {
-            type: 'value',
-            scale: true,
-            name: '',
-            max: 30,
+            type : 'value',
+            name: '次数',
             min: 0,
-            boundaryGap: [0.2, 0.2]
+            max: 1800,
+            interval: 300,
+            axisLabel: {
+                formatter: '{value}',
+                lineStyle: {
+                    color: "#fff"
+                }
+            },
+            nameTextStyle: {
+                color: '#fff',
+                fontSize: 10
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#fff'
+                },
+
+            },
+            axisLine: {
+                lineStyle: {
+                    color: "#fff"
+                }
+            }
         },
         {
             type: 'value',
-            scale: true,
-            name: '查询服务访问次数',
-            max: 1200,
+            name: '百分比',
             min: 0,
-            boundaryGap: [0.2, 0.2]
+            max: 50,
+            interval: 10,
+            axisLabel: {
+                formatter: '{value} %',
+                lineStyle: {
+                    color: "#fff"
+                }
+            },
+            nameTextStyle: {
+                color: '#fff'
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            axisLine: {
+                lineStyle: {
+                    color: "#fff"
+                }
+            }
         }
+
     ],
-    series: [
+    series : [
         {
-            name:'预购队列',
+            name:'线上业务办理量',
             type:'bar',
-            xAxisIndex: 1,
-            yAxisIndex: 1,
-            data:(function (){
-                var res = [];
-                var len = 10;
-                while (len--) {
-                    res.push(Math.round(Math.random() * 1000));
-                }
-                return res;
-            })()
+            data:[200, 490, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
         },
         {
-            name:'最新成交价',
+            name:'线上业务办理量',
+            type:'bar',
+            data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+            markPoint : {
+                data : [
+                    {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        },
+         {
+            name:'环比分析',
             type:'line',
-            data:(function (){
-                var res = [];
-                var len = 0;
-                while (len < 10) {
-                    res.push((Math.random()*10 + 5).toFixed(1) - 0);
-                    len++;
-                }
-                return res;
-            })()
+            data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+            markPoint : {
+                data : [
+                    {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
         }
     ]
 };

@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp">
     <link rel="stylesheet" href="echart-index/echarts-2.2.7/src/index/index.css">
+    <style type="text/css">
+        
+</style>
 </head>
 <body data-type="index" style='overflow:scroll;overflow-x:hidden'>
     <div class="Content clearfix">
@@ -68,19 +71,15 @@
                     <div class="left-bottom"></div>
                     <div class="right-bottom"></div>
                     <div id="tagbox" class="word-echart">
-                        <a class="color3" href="#">劳动报酬</a>
-                        <a class="color2" href="#">就业创业</a>
-                        <a class="color0" href="#">劳动关系</a>
-                        <a class="color0" href="#">医疗保险</a>
-                        <a class="color1" href="#">事业单位人事管理</a>
-                        <a class="color0" href="#">养老保险</a>
-                        <a class="color2" href="#">人事考试</a>
-                        <a class="color3" href="#">社保综合</a>
-                        <a class="color0" href="#">专业技术人员管理</a>
-                        <a class="color2" href="#">网上申报</a>
-                        <a class="color0" href="#">公积金</a>
-                        <a class="color1" href="#">工伤保险</a>
-                        <a class="color1" href="#">人力资源</a>
+                        <a class="red" href="#">劳动报酬</a>
+                        <a class="red" href="#">就业创业</a>
+                        <a class="green" href="#">医疗保险</a>
+                        <a class="blue" href="#">养老保险</a>
+                        <a class="green" href="#">人事考试</a>
+                        <a class="green" href="#">专业技术人员管理</a>
+                        <a class="red" href="#">网上申报</a>
+                        <a class="blue" href="#">公积金</a>
+                        <a class="red" href="#">人力资源</a>
                     </div>
                 </div>
             </div>
@@ -162,7 +161,6 @@
                             <td>254</td>
                             <td>111</td>
                         </tr>
-
                     </table>
                     <div class="left-bottom"></div>
                     <div class="right-bottom"></div>
@@ -178,7 +176,7 @@
                 <div class="analysis-wrap">
                     <div class="left-bottom"></div>
                     <div class="right-bottom"></div>
-                    <div id="analysis-echart" style="height:170px;"></div>
+                    <div id="analysis-echart" style="height:170px;color:#ffffff;"></div>
                 </div>
                 
             </div>
@@ -193,24 +191,23 @@
                     <div class="right-bottom"></div>
                     <div id="search-echart" style="height:180px;"></div>
                 </div>
-                
             </div>
             
         </div>
         <div class="clear"></div>
     </div>
-
-  
-<!--     <script src="echart-index/echarts-2.2.7/src/index/index.js"></script> -->
     <script src="echart-index/echarts-2.2.7/src/echarts.js"></script>
-    <script src="echart-index/echarts-2.2.7/src/jquery-3.0.0.min.js"></script>
+    <!-- <script src="echart-index/echarts-2.2.7/src/jquery-3.0.0.min.js"></script> -->
+    <script src="echart-index/echarts-2.2.7/src/jquery-1.7.2.min.js"></script>
+    <script src="echart-index/echarts-2.2.7/src/jquery.windstagball.js"></script>
     <script src="echart-index/echarts-2.2.7/src/ezhou.js"></script>
     <script src="echart-index/echarts-2.2.7/src/analysis.js"></script>
     <script src="echart-index/echarts-2.2.7/src/zhongduanyewu.js"></script>
     <script src="echart-index/echarts-2.2.7/src/xianshangxianxia.js"></script>
     <script src="echart-index/echarts-2.2.7/src/shenbaotongji.js"></script>
     <script src="echart-index/echarts-2.2.7/src/calenderpie.js"></script>
-    <script src="echart-index/echarts-2.2.7/src/reci.js"></script>
+   <!--  <script src="echart-index/echarts-2.2.7/src/reci.js"></script> -->
+    
     <script type="text/javascript">
     /***********************************/
     /**************鄂州地图chart3***************/
@@ -234,7 +231,12 @@
         });
     });       
 
-    initReci();
+    $(document).ready(function() {
+    $("#tagbox").windstagball({
+            radius:55,
+            speed:10
+        });
+    });
  
     </script>
 </body>
