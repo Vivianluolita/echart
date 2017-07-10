@@ -10,7 +10,6 @@ body{
     height: 610px;
     position: relative;
     min-width: 1350px;
-    min-height: 768px;
 }
 .Content-left{
     width:23%;
