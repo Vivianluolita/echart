@@ -5,15 +5,13 @@ option = {
     color:colors,
     tooltip: {
         trigger: 'axis',
-        axisPointer: {
-            type: 'cross',
-            crossStyle: {
-                color: '#999'
-            }
-        }
+       
     },
     legend: {
-        data: ['蒸发量', '平均温度']
+        data: ['蒸发量', '平均温度'],
+        textStyle:{
+            color:'#fff'
+        }
     },
     xAxis: [{
         type: 'category',
@@ -96,7 +94,8 @@ option = {
     series: [{
             name: '蒸发量',
             type: 'bar',
-            data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0]
+            data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0],
+           
         },
         {
             name: '平均温度',
@@ -104,6 +103,7 @@ option = {
             yAxisIndex: 1,
             data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5]
         }
+        
     ]
 };
 
