@@ -83,9 +83,11 @@ body{
 }
 .left-count,.hot-world,.bussiness-proportion,.map,.month-bussiness{
     margin-bottom: 5px;
-    border: 5px solid #fefefe;
+    border: 20px solid;
     border-image-source: url(../images/border.png);
-    border-image-slice: 5 5 5 5;
+    border-image-slice: 20;
+    padding: -20px;
+    box-sizing: border-box;
 }
 /*.hot-world{
     margin-bottom: 5px;
